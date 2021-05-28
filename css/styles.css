@@ -11,6 +11,8 @@
   --address-link-color: rgba(255, 255, 255, 0.6);
   --background-team-color: #f5f4fa;
   --border-fon: #eeeeee;
+  --duration: 250ms;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 h1,
@@ -119,6 +121,20 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--black-color);
+  transition-property: color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--cubic);
+}
+
+.menu-link.accent::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  display: block;
+  margin-top: 28px;
+  background: var(--accent-color);
+  border-radius: 2px;
 }
 .accent {
   color: var(--accent-color);
@@ -140,6 +156,9 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--grey-color);
+  transition-property: color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--cubic);
 }
 
 .header-contact-link:hover,
@@ -268,6 +287,7 @@ body {
   flex-wrap: wrap;
 }
 .pictures-list-item {
+  position: relative;
   flex-basis: calc((100% - 90px) / 3);
   margin-left: 30px;
   margin-top: 30px;
@@ -281,7 +301,21 @@ body {
   letter-spacing: 0.03em;
   color: var(--title-color);
 }
-
+.products {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  color: white;
+  padding: 27px;
+  background-color: rgba(47, 48, 58, 0.8);
+}
 /* ========== END PICTURES ========== */
 
 /* ========== TEAM ========== */
@@ -352,6 +386,9 @@ body {
   width: 44px;
   height: 44px;
   fill: #afb1b8;
+  transition-property: background-color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--cubic);
 }
 .team-icon {
   display: flex;
@@ -391,9 +428,15 @@ body {
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition-property: border;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--cubic);
 }
 .clients-list-link-icon {
   fill: #afb1b8;
+  transition-property: fill;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--cubic);
 }
 .clients-list-link:hover .clients-list-link-icon,
 .clients-list-link:focus .clients-list-link-icon {
@@ -448,8 +491,8 @@ body {
   cursor: pointer;
   color: var(--title-color);
   transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: var(--duration);
+  transition-timing-function: var(--cubic);
 }
 
 .modal-button:hover,
@@ -494,8 +537,8 @@ body {
   background-color: rgba(33, 150, 243, 0.9);
   overflow: auto;
   transform: translateY(100%);
-  transition: transform 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--duration);
+  transition-timing-function: var(--cubic);
 }
 .portfolio-img-item-wrapper {
   position: relative;
@@ -568,6 +611,9 @@ body {
   height: 44px;
   background: rgba(255, 255, 255, 0.1);
   fill: var(--white-color);
+  transition-property: background-color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--cubic);
 }
 .footer-social:hover,
 .footer-social:focus {
@@ -595,3 +641,47 @@ body {
 }
 
 /* ========== END FOOTER ========== */
+
+/* ========== MODAL WINDOW ========== */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transition: opacity var(--duration), visibility var(--duration);
+  transition-timing-function: var(--cubic);
+}
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 580px;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+.modal-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* ========== END MODAL WINDOW ========== */
