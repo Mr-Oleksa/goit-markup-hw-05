@@ -393,6 +393,9 @@ body {
 }
 .team-icon {
   display: flex;
+  transition-property: fill;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--cubic);
 }
 .link-social:hover,
 .link-social:focus {
@@ -439,6 +442,7 @@ body {
   transition-duration: var(--duration);
   transition-timing-function: var(--cubic);
 }
+
 .clients-list-link:hover .clients-list-link-icon,
 .clients-list-link:focus .clients-list-link-icon {
   fill: var(--accent-color);
@@ -491,7 +495,7 @@ body {
   letter-spacing: 0.06em;
   cursor: pointer;
   color: var(--title-color);
-  transition-property: background-color;
+  transition-property: color, background-color, box-shadow;
   transition-duration: var(--duration);
   transition-timing-function: var(--cubic);
 }
