@@ -65,7 +65,7 @@ body {
 /* ============ HEADER ========== */
 .header {
   margin: 0 auto;
-  max-width: 1600px;
+  /* max-width: 1600px; */
   border-bottom: 1px solid #ececec;
 }
 .header-container {
@@ -329,7 +329,7 @@ body {
 
 .team {
   margin: 0 auto;
-  max-width: 1600px;
+  /* max-width: 1600px; */
   background-color: var(--background-team-color);
 }
 .team-title {
@@ -559,7 +559,7 @@ body {
 /* ========== FOOTER ========== */
 .footer {
   margin: 0 auto;
-  max-width: 1600px;
+  /* max-width: 1600px; */
   padding: 60px 0;
   background-color: var(--background-color);
 }
